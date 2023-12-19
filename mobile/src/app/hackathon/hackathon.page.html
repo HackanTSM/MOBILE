@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Titre "Liste des hackathons" -->
+  <ion-title>Liste des hackathons</ion-title>
+
+  <!-- Cartes dynamiques avec ngFor -->
+  <ion-card *ngFor="let event of events; let i = index" (click)="voirAtelier()">
+    <ion-img [src]="event.imageUrl"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ event.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Clique pour en savoir plus
+    </ion-card-content>
+    <ion-card-content>
+      <ion-icon 
+        name="heart" 
+        [color]="isFavori[i] ? 'danger' : 'medium'" 
+        [style.fontSize]="'24px'" 
+        (click)="toggleFavori($event, i)">
+      </ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
