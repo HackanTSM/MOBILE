@@ -12,13 +12,13 @@
   <ion-title>Liste des hackathons</ion-title>
 
   <!-- Cartes dynamiques avec ngFor -->
-  <ion-card *ngFor="let event of events; let i = index" (click)="voirAtelier()">
+  <ion-card *ngFor="let event of events; let i = index" (click)="voirAtelier(event)">
     <ion-img [src]="event.imageUrl"></ion-img>
     <ion-card-header>
-      <ion-card-title>{{ event.title }}</ion-card-title>
+      <ion-card-title>{{ event.titre }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Clique pour en savoir plus
+      Cliquez pour en savoir plus
     </ion-card-content>
     <ion-card-content>
       <ion-icon 
